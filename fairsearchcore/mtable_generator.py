@@ -66,7 +66,7 @@ def compute_aux_mtable(mtable):
     aux_mtable = pd.DataFrame(columns=["inv", "block"])
     last_m_seen = 0
     last_position = 0
-    for position in range(1, len(mtable)):
+    for position in range(1, len(mtable)+1):
         if position % 2000 == 0:
             print("Computing m inverse: {:.0f} of {:.0f}".format(position, len(mtable)))
         if mtable.at[position, "m"] == last_m_seen + 1:
